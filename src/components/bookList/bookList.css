@@ -11,7 +11,7 @@
 
 .card-title {
     padding: 1vw 1vh 1vw 1vh;
-    font-size: 1.5vw;
+    font-size: 1.2vw;
     height: 6vw;
     text-align: center;
     font-weight: 100; 
@@ -19,4 +19,14 @@
 
 .play-icon {
     font-size: 30px;
+}
+
+.btn {
+    display: block;
+    font-size: 1.2vw;
+    font-weight: 100;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    background-color: rgb(66, 99, 175);;
+    border: none;
 }

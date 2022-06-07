@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import { Button, Offcanvas, OffcanvasHeader, OffcanvasBody } from 'reactstrap';
-import MultiPlayer from '../player/multiPlayer';
+// import MultiPlayer from '../player/multiPlayer';
+import Player from '../player/Player';
 import './bookList.css';
 
 const BookList = () => {
@@ -37,25 +38,24 @@ const BookListItem = ({bookItem}) => {
     
     const [visible, setVisible] = useState(false);
     const {id, book_name, books_mp3, books_img} = bookItem;
-    // console.log(books_mp3[0])
-
 
     return (
 
             <li key={id} className="card book-item">
                 <h5 className="card-title">{book_name}</h5>
-                <img className="card-img-top" src={books_img} alt={book_name}></img>
                 <Button
                     className='btn'
                     color="primary"
                     onClick={() => setVisible(!visible)}
                 >Слушать
                 </Button>
-                 <Offcanvas direction='bottom'
+                 <Offcanvas direction='end'
                            backdrop={true} 
                            fade={true} 
                            autoFocus={true}
-                           isOpen={visible}>
+                           isOpen={visible}
+                        //    onClick={() => setVisible(!visible)}
+                        >
                     <OffcanvasHeader className='canvas-header'>
                         <i className="close-icon bi bi-x-square"
                         onClick={() => setVisible(!visible)}>
@@ -63,28 +63,12 @@ const BookListItem = ({bookItem}) => {
                     </OffcanvasHeader>
                     <OffcanvasBody>
                     <strong>
-                        Player
+                        {book_name}
                     </strong>
-                    {/* <Button>
-                        Play
-                        <i className="bi bi-play-btn-fill"></i>
-                    </Button>
-                    <Button>
-                        Stop
-                        <i className="bi bi-stop-btn-fill"></i>
-                    </Button> */}
-                    <MultiPlayer urls={books_mp3}/>
-                        
-                    
-                    
-                    
-                    
-
+                    <Player urls={books_mp3}/>
                     </OffcanvasBody>
-                </Offcanvas>
-
-
-                
+                </Offcanvas>  
+                <img className="card-img-top" src={books_img} alt={book_name}></img>
             </li>
     )
 }
