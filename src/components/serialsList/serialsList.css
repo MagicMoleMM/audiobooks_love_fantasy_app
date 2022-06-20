@@ -1,20 +1,22 @@
-.book-item {
+.serials-item {
     /* height: 120px; */
     width: 15vw;
     margin: 1vw 1vh 1vw 1vh;
     border: none;
-    background-color: rgb(135, 157, 209);
+    background-color:rgb(255, 255, 255);
     opacity: 80%;
-    color: white;
+    color: rgb(0, 0, 0);
     border-radius: 3%;
+    border: solid 0.1vh rgb(188, 188, 188);
 }
 
 .card-title {
     padding: 1vw 1vh 1vw 1vh;
     font-size: 1.2vw;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     height: 6vw;
     text-align: center;
-    font-weight: 100; 
+    font-weight:500; 
 }
 
 .play-icon {
