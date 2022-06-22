@@ -1,19 +1,20 @@
-import { useParams, useLocation } from "react-router-dom";
-import React from 'react';
+import { useParams, useLocation } from 'react-router-dom'
+import React from 'react'
 
+export default function DetailSerial({ serialsItems }) {
+    let params = useParams()
+    let location = useLocation()
 
-export default function DetailSerial({serialsItems}) {
-
-  let params = useParams();
-  let location = useLocation();
-
-    let item = serialsItems.find(serialItem => serialItem.id === +params.searchId)
+    let item = serialsItems.find(
+        (serialItem) => serialItem.id === +params.searchId
+    )
     console.log(serialsItems)
     console.log(item)
 
-      const {id, 
-        item_title, 
-        item_title_eng, 
+    const {
+        id,
+        item_title,
+        item_title_eng,
         item_year,
         item_country,
         item_translate,
@@ -27,35 +28,37 @@ export default function DetailSerial({serialsItems}) {
         item_rating_1,
         item_rating_2,
         item_img,
+    } = item
 
-    } = item;
+    return (
+        <div style={{ padding: '1rem' }}>
+            <h2>
+                Cериал: {item_title} / {item_title_eng} / {id}
+            </h2>
+            <p>
+                Location: {params.searchId} {location.pathname}
+            </p>
 
-
-  return (
-
-
-    <div style={{ padding: '1rem' }}>
-        <h2>Cериал: {item_title} / {item_title_eng} / {id}</h2>
-        <p>Location: {params.searchId} {location.pathname}</p>
-      
-        <div className="clearfix">
-            <img src={`https://zetseriali.online${item.item_img}`} className="col-md-6 float-md-end mb-3 ms-md-3" alt={item_img}/>
-            <p>{item_rating_1} / {item_rating_2}</p>
-            <p>Год выпуска: {item_year}</p>
-            <p>Страна: {item_country}</p>
-            <p>Перевод: {item_translate}</p>
-            <p>{item_producer}</p>
-            <p>{item_time}</p>
-            <p>{item_genre}</p>
-            <p>{item_studio}</p>
-            <p>{item_actors}</p>
-            <p>{item_video_link}</p>
-            <p>{item_text}</p>
+            <div className="clearfix">
+                <img
+                    src={`https://zetseriali.online${item.item_img}`}
+                    className="col-md-6 float-md-end mb-3 ms-md-3"
+                    alt={item_img}
+                />
+                <p>
+                    {item_rating_1} / {item_rating_2}
+                </p>
+                <p>Год выпуска: {item_year}</p>
+                <p>Страна: {item_country}</p>
+                <p>Перевод: {item_translate}</p>
+                <p>{item_producer}</p>
+                <p>{item_time}</p>
+                <p>{item_genre}</p>
+                <p>{item_studio}</p>
+                <p>{item_actors}</p>
+                <p>{item_video_link}</p>
+                <p>{item_text}</p>
+            </div>
         </div>
-
-      
-    </div>
-
-  )
-
+    )
 }
