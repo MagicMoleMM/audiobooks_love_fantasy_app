@@ -6,20 +6,19 @@ export default function DetailSerial({ serialsItems }) {
     const navigate = useNavigate()
 
     let item = serialsItems.find(
-        (serialItem) => serialItem.id === +params.searchId
+        (serialItem) => serialItem.index === +params.searchId
     )
     // console.log(serialsItems)
     // console.log(item)
 
     const {
-        id,
+        index,
         item_title,
         item_title_eng,
         item_year,
         item_country,
         item_translate,
         item_producer,
-        item_time,
         item_genre,
         item_studio,
         item_actors,
@@ -33,7 +32,7 @@ export default function DetailSerial({ serialsItems }) {
     return (
         <div style={{ padding: '1rem' }}>
             <h2>
-                Cериал: {item_title} / {item_title_eng} / {id}
+                Cериал: {item_title} / {item_title_eng} / {index}
             </h2>
             <button onClick={() => navigate(`video/`)}>Смотреть сейчас!</button>
             <p>
@@ -42,7 +41,7 @@ export default function DetailSerial({ serialsItems }) {
 
             <div className="clearfix">
                 <img
-                    src={`https://zetseriali.online${item.item_img}`}
+                    src={window.location.origin +`/img/${item_img}`}
                     className="col-md-6 float-md-end mb-3 ms-md-3"
                     alt={item_img}
                 />
@@ -53,7 +52,6 @@ export default function DetailSerial({ serialsItems }) {
                 <p>Страна: {item_country}</p>
                 <p>Перевод: {item_translate}</p>
                 <p>{item_producer}</p>
-                <p>{item_time}</p>
                 <p>{item_genre}</p>
                 <p>{item_studio}</p>
                 <p>{item_actors}</p>

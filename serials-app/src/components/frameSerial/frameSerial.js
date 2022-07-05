@@ -5,7 +5,7 @@ export default function FrameSerial({ serialsItems }) {
     let params = useParams()
 
     let item = serialsItems.find(
-        (serialItem) => serialItem.id === +params.searchId
+        (serialItem) => serialItem.index === +params.searchId
     )
     // console.log(serialsItems)
     // console.log(item)
@@ -26,7 +26,7 @@ export default function FrameSerial({ serialsItems }) {
                     id={item_id}
                     display="initial"
                     sandbox=""
-                    referrerPolicy="no-referrer"
+                    // referrerPolicy="no-referrer"
                     allowFullScreen
                     position="relative"
                 />

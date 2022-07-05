@@ -37,8 +37,8 @@ export default function SerialSearch({ serialsItems }) {
                                         color: isActive ? 'red' : '',
                                     }
                                 }}
-                                to={`search/${serialsItem.id}`}
-                                key={serialsItem.id}
+                                to={`search/${serialsItem.index}`}
+                                key={serialsItem.index}
                             >
                                 {serialsItem.item_country}
                             </NavLink>

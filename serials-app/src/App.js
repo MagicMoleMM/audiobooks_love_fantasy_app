@@ -5,7 +5,7 @@ import SerialSearch from './components/serialSearch/serialSearch'
 import DetailSerial from './components/serialDetail/detailSerial'
 import FrameSerial from './components/frameSerial/frameSerial'
 import './App.css'
-import { serialsData } from './serialsData'
+import { serialsData2 } from './serialData2'
 
 function App() {
     return (
@@ -34,20 +34,20 @@ function App() {
                 />
                 <Route
                     path="list"
-                    element={<SerialsList serialsItems={serialsData} />}
+                    element={<SerialsList serialsItems={serialsData2} />}
                 />
                 <Route
                     path="list/list/:searchId"
-                    element={<DetailSerial serialsItems={serialsData} />}
+                    element={<DetailSerial serialsItems={serialsData2} />}
                 />
                 <Route
                     path="list/list/:searchId/video"
-                    element={<FrameSerial serialsItems={serialsData} />}
+                    element={<FrameSerial serialsItems={serialsData2} />}
                 />
 
                 <Route
                     path="search"
-                    element={<SerialSearch serialsItems={serialsData} />}
+                    element={<SerialSearch serialsItems={serialsData2} />}
                 >
                     <Route
                         index
@@ -59,7 +59,7 @@ function App() {
                     />
                     <Route
                         path="search/:searchId"
-                        element={<DetailSerial serialsItems={serialsData} />}
+                        element={<DetailSerial serialsItems={serialsData2} />}
                     />
                 </Route>
                 <Route

@@ -75,11 +75,11 @@ const SerialsList = ({ serialsItems }) => {
                     .map((serialsItem) => {
                         return (
                             <Link
-                                to={`list/${serialsItem.id}`}
-                                key={serialsItem.id}
+                                to={`list/${serialsItem.index}`}
+                                key={serialsItem.index}
                             >
                                 <SerialsListItem
-                                    key={serialsItem.id}
+                                    key={serialsItem.index}
                                     serialsItem={serialsItem}
                                 />
                             </Link>
@@ -91,16 +91,16 @@ const SerialsList = ({ serialsItems }) => {
 }
 
 const SerialsListItem = ({ serialsItem }) => {
-    const { id, item_title, item_title_eng, item_img } = serialsItem
+    const { index, item_title, item_title_eng, item_img } = serialsItem
 
     return (
-        <li key={id} className="card serials-item">
+        <li key={index} className="card serials-item">
             <h5 className="card-title">
                 {item_title} / {item_title_eng}
             </h5>
             <img
                 className="card-img-top"
-                src={`https://allserial.org${item_img}`}
+                src={window.location.origin +`/img/${item_img}`}
                 alt={item_img}
             ></img>
         </li>
