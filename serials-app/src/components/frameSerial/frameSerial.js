@@ -14,9 +14,9 @@ export default function FrameSerial({ serialsItems }) {
 
     return (
         <div style={{ padding: '1rem' }}>
-            <h2>
-                Cериал: {item_title} / {item_title_eng}
-            </h2>
+            <h2>{item_title}</h2>
+            <h4 className="text-muted">{item_title_eng}</h4>
+
             <div>
                 <Iframe
                     url={`https:${item_video_link}`}
@@ -30,7 +30,6 @@ export default function FrameSerial({ serialsItems }) {
                     allowFullScreen
                     position="relative"
                 />
-
             </div>
         </div>
     )

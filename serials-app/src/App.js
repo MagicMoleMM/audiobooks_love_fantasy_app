@@ -10,12 +10,21 @@ import { serialsData2 } from './serialData2'
 function App() {
     return (
         <>
-            <AppHeader />
+            <AppHeader serialsItems={serialsData2}/>
             <nav
                 style={{
-                    borderBottom: 'solid 1px',
+
+                    borderBottom: 'solid 1px tomato',
+                    paddingTop: '1rem',
                     paddingBottom: '1rem',
                     paddingLeft: '1rem',
+                    // backgroundColor: 'gray',
+                    height: '5vw',
+                    // text-align: 'center',
+                    // font-size: '4vw',
+                    // font-weight: '100',
+                    color: 'white',
+                    opacity: '80%'
                 }}
             >
                 <Link to="/list">Полный список сериалов</Link> |{' '}
